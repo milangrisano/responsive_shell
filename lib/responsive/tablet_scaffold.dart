@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_app/view/landing_page.dart';
 
 class TabletScaffold extends StatelessWidget {
   const TabletScaffold({super.key});
@@ -6,7 +7,8 @@ class TabletScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Colors.greenAccent,
+      backgroundColor: Color(0xFF1E1E1E),
+      body: LandingPage(),
     );
   }
 }

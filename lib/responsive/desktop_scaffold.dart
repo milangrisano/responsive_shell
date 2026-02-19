@@ -1,26 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_app/shared/extend_appbar_button.dart';
+import 'package:responsive_app/view/landing_page.dart'; // Ensure this matches the file path
 
 class DesktopScaffold extends StatelessWidget {
   const DesktopScaffold({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      backgroundColor: Colors.redAccent,
+    return Scaffold(
+      backgroundColor: const Color(0xFF1E1E1E),
       appBar: AppBar(
-        leading: const Icon(Icons.home),
-        title: const Text('Name Page'),
-        actions:  [
-          ExtendAppBarButton(text: 'About', onPress: (){},),
-          ExtendAppBarButton(text: 'Pricing', onPress: (){},),
-          ExtendAppBarButton(text: 'Contact', onPress: (){},),
-          ExtendAppBarButton(text: 'Location', onPress: (){},),
-          const SizedBox(width: 20),          
+        backgroundColor: const Color(0xFF1E1E1E),
+        elevation: 0,
+        leading: const Icon(Icons.person, color: Color(0xFFD4AF37)), // Gold icon
+        title: Text(
+          'Fiumicello',
+          style: GoogleFonts.greatVibes( // Using a script font if available, or fallback to Outfit
+            color: Colors.white,
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
+        actions: [
+          ExtendAppBarButton(text: 'Para Llevar', onPress: () {}),
+          ExtendAppBarButton(text: 'Mesas', onPress: () {}),
+          ExtendAppBarButton(text: 'Barra', onPress: () {}),
+          ExtendAppBarButton(text: 'Delivery', onPress: () {}),
+          const SizedBox(width: 20),
         ],
-        // elevation: 10,
       ),
+      body: const LandingPage(),
     );
   }
 }
-
